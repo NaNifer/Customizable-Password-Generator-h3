@@ -1,0 +1,56 @@
+generateBtn opens dialog boxes
+    askNums1 prompt asks for a number
+        If no number is entered, second prompt opens
+            askNums2 prompt specifies that a number is required
+                If number is not entered, askNums2 is put into a loop
+                Else if, askNums2 = number, 
+                    put string into chosenNums
+                    go to lowerCaseAsk confirm
+        Else if, askNums1 = number, 
+            put string into chosenNums
+            go to lowerCaseAsk confirm
+
+    lowerCaseAsk confirm asks if user wants to use lowercase
+        Once button has been pressed, 
+            save results into chosenLower 
+            open upperCaseAsk confirm
+
+    upperCaseAsk confirm asks if user wants to use uppercase
+        Once button has been pressed, 
+            save results into chosenUpper
+            open numericAsk confirm
+
+    numericAsk confirm asks if user wants to use numeric characters
+        Once button has been pressed, 
+            save results into chosenNumeric
+            open specialAsk confirm
+
+    specialAsk confirm asks if user wants to use special characters
+        Once button has been pressed, 
+            save results into chosenSpecial
+            open summaryParameters alert
+
+    summaryParameters alert
+        diplays chosenNums + any true result from confirm boxes as a message
+            If chosenLower = true, then display text "Lowercase"
+                Else if go to chosenUpper
+            If chosenUpper = true, then display text "Uppercase"
+                Else if go to chosenNumeric
+            If chosenNumeric = true, then display text "Numeric"
+                Else if go to chosenSpecial
+            If chosenSpecial = true, then display text "Special"
+                Else if display summaryParameters alert
+        If summaryParameters alert button has been pressed, call on function generatePassword ();
+    
+
+summaryParameters = chosenNums + any true result from (chosenLower, chosenUpper, chosenNumeric, chosenSpecial)
+
+chosenNums = number that the user entered
+    Convert chosenNums string to number
+chosenLower = true/false
+chosenUpper = true/false
+chosenNumeric = true/false
+chosenSpecial = true/false
+
+generatePassword ();
+    inputs string into 
