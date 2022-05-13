@@ -1,50 +1,86 @@
 // Added global varitables so that they can be accessed outside of dialogBoxes()
-var chosenNums;
-var lowerCaseAsk;
-var upperCaseAsk;
-var numericAsk;
-var specialAsk;
+var chosenNums = ""
+var lowerCaseAsk = ""
+var upperCaseAsk = ""
+var numericAsk = ""
+var specialAsk = ""
 
 // Assignment Code -- generateBtn = "generate password" button
 var generateBtn = document.querySelector("#generate");
 
-// dialog buttons parameters
-// - 8 characters and no more than 128 characters
-// - character types to include in the password
-// - whether or not to include lowercase, uppercase, 
-// numeric, and/or special characters
 
+
+// Event listener for dialogBoxes
 generateBtn.addEventListener("click", dialogBoxes);
 
+// Dialog box function
 function dialogBoxes() {
-  let askNums1 = prompt("Please enter how many characters you would like your password to be. It can be between 8 characters and no more than 128 characters.", "Enter a number, IE. '8, 12, 111'");
+  let askNums1 = prompt("Please enter how many characters you would like your password to be.\p Your number must be between 8 characters and 128 characters.", "Enter a number, IE. '8, 12, 111'");
 
-  if (Number(askNums1) !== NaN && Number(askNums1) >= 8 && Number(askNums1) <= 128) {
-    chosenNums = Number(askNums1)
+  if (Number.isInteger(parseInt(askNums1)) == true && parseInt(askNums1) >= 8 && parseInt(askNums1) <= 128) {
+    chosenNums = parseInt(askNums1)
   }
   else {
-    let askNums2 = prompt("Please enter a number between 8 - 128.", "Enter a number.");
-    while (Number(askNums2) === NaN || Number(askNums2) < 8 || Number(askNums2) > 128) {
-      askNums2 = prompt("Please enter a number between 8 - 128.", "Enter a number.");
+    let askNums2 = prompt("Whoops! Your number must be between 8 - 128.", "Number");
+
+    while (Number.isInteger(parseInt(askNums2)) == false || parseInt(askNums2) < 8 || parseInt(askNums2) > 128) {
+      askNums2 = prompt("Whoops! Your number must be between 8 - 128.", "Number");
     }
-    chosenNums = Number(askNums2);
+    chosenNums = parseInt(askNums2);
   }
-let lowerCaseAsk = confirm("Would you like to include lowercase characters?");
 
-let upperCaseAsk = confirm("Would you like to include uppercase characters?");
+  lowerCaseAsk = confirm("Would you like to include LOWERCASE characters?");
 
-let numericAsk = confirm("Would you like to include numeric characters?  IE., 0-9 ");
+  upperCaseAsk = confirm("Would you like to include UPPERCASE characters?");
 
-let specialAsk = confirm("Would you like to include special characters?  IE., $ & @ !");
+  numericAsk = confirm("Would you like to include NUMERIC characters?  IE., 0-9 ");
+
+  specialAsk = confirm("Would you like to include SPECIAL characters?  IE., $ & @ !");
+
+
+  //  ********** THEN my input should be validated and at least one character type should be selected
+  // The following loop validation is not working:
+
+  while ((lowerCaseAsk || upperCaseAsk || numericAsk || specialAsk) !== true) {
+    var validateInput = alert("You MUST choose at least one type of charaters to use. Let's try that again...");
+    lowerCaseAsk = confirm("Would you like to include lowercase characters?");
+    upperCaseAsk = confirm("Would you like to include uppercase characters?");
+    numericAsk = confirm("Would you like to include numeric characters?  IE., 0-9 ");
+    specialAsk = confirm("Would you like to include special characters?  IE., $ & @ !");
+  }
 }
 
-function writePassword() {
 
-}
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+
+
+// Global varitables for the characters in the password
+const alphaLower = "abcdefghijklmnopqrstuvwxyz";
+const alphaUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const numbers = "0123456789";
+const symbols = "!@#$%^&*_-+=";
+
+
+
+// // Event listener for generate button
+// generateBtn.addEventListener("click", writePassword);
+
+
+
+
+// function writePassword() {
+// }
+
+
+//   var password = generatePassword();
+
+
+//   // Finds the element, need to append
+//   var passwordText = document.querySelector("#password");
+
+
+
+//   passwordText.value = password;
 
 
 
@@ -57,15 +93,6 @@ function writePassword() {
 
 
 // Write password to the #password input
-
-
-
-
-
-// }
-
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
 
 
 

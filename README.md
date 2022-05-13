@@ -114,6 +114,13 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 
 
+Password generation reference:
+https://w3collective.com/random-password-generator-javascript/
+https://dev.to/code_mystery/random-password-generator-using-javascript-6a
+
+
+
+
 ## Author
 
 - Portfolio - [Nifer Kilakila](https://niferk.github.io/Nifer-Kilakila-Portfolio-h2/)
