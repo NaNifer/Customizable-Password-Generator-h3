@@ -10,14 +10,14 @@ function generatePassword() {
   let passwordLength = prompt("Please enter how many characters you would like your password to be.\p Your number must be between 8 characters and 128 characters.", "Enter a number, IE. '8, 12, 111'");
   passwordLength = parseInt(passwordLength);
   if (Number.isInteger(passwordLength) && passwordLength >= 8 && passwordLength <= 128) {
-    const lowerCaseAsk = confirm("Would you like to include LOWERCASE characters?");
-    const upperCaseAsk = confirm("Would you like to include UPPERCASE characters?");
-    const numericAsk = confirm("Would you like to include NUMERIC characters?  IE., 0-9 ");
+    const useLower = confirm("Would you like to include LOWERCASE characters?");
+    const useUppercae = confirm("Would you like to include UPPERCASE characters?");
+    const useNumbers = confirm("Would you like to include NUMERIC characters?  IE., 0-9 ");
     const useSpecialChars = confirm("Would you like to include SPECIAL characters?  IE., $ & @ !");
 
     //  Input validated so that at least one character type should be selected
 
-    if (lowerCaseAsk || upperCaseAsk || numericAsk || useSpecialChars) {
+    if (useLower || useUppercae || useNumbers || useSpecialChars) {
       // const alphaLower = "abcdefghijklmnopqrstuvwxyz";
       // const alphaUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
       // const numbers = "0123456789";
@@ -25,12 +25,12 @@ function generatePassword() {
 
       const specialChars = getSpecialChars(useSpecialChars, getRandomNumber(3));
     } else {
-      alert("Whoops! You need to select at least one type of character.");
+      alert("Whoops! You need to choose 'OK' for at least one charater type. Let's start again...");
     }
 
   }
   else {
-    alert("Whoops! Your number must be between 8 - 128.", "Number");
+    alert("Whoops! Your number must be between 8 - 128.");
 
   }
 
@@ -39,9 +39,9 @@ function generatePassword() {
 
 
 // function writePassword() 
-// if lowerCaseAsk is true, And passwordOutput is < passwordLength, pull 1 character randomly from string alphaLower, and put it into passwordOutput
-// if upperCaseAsk is true, And passwordOutput is < passwordLength, pull 1 character randomly from string alphaUpper, and put it into passwordOutput
-// if numericAsk is true, And passwordOutput is < passwordLength, pull 1 character randomly from string numbers, and put it into passwordOutput
+// if useLower is true, And passwordOutput is < passwordLength, pull 1 character randomly from string alphaLower, and put it into passwordOutput
+// if useUppercae is true, And passwordOutput is < passwordLength, pull 1 character randomly from string alphaUpper, and put it into passwordOutput
+// if useNumbers is true, And passwordOutput is < passwordLength, pull 1 character randomly from string numbers, and put it into passwordOutput
 // if specialChars is useSpecialChars, And passwordOutput is < passwordLength, pull 1 character randomly from string specialChars, and put it into passwordOutput
 // shuffle paswordOutput, and put it into password
 
@@ -63,8 +63,6 @@ function getSpecialChars(useSpecialChars, numberOfSpecialChars) {
 }
 
 
-
-// 
 // ================================DONT TOUCH!!========================================
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
