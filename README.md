@@ -69,7 +69,18 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
+- MDN, Math.random() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+
 ## My process
+
+
+This JS task seemed insumountable to me at first. The terminology, syntax, and overall construction of how the various moving parts interconnected with each other was quite confusing for me. 
+I first broke the problem down into smaller sections of code, not worrying about what I needed to do next. I focused on first making the dialog boxes work, and subsequently create the output that I would use in the actual generation of the password. This included both ensuring that I was getting the results that I wanted with the happy path, as well as edge cases. 
+
+Once that was nailed down, I refactored it, as although the dialog boxes were working, they were really, really WET.
+
+Next, I 
+
 
 ### Built with
 
